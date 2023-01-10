@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sales Prediction Model</title>
+	
+	<!--linking the css and js files-->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/back.css')}}">
+
+    <!-- Quick Start: CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+
+
+    <!-- <img src= "{{ url_for('static', filename='images/backimg.jpg') }}" style="height:100%;width:100%;"> -->  
+      <!-- Inputs for our ML model -->
+      <center>
+        <form style="
+  border-radius: 5px;
+  padding: 80px;
+  width: 700px;
+  height: fit-content;
+  position:relative;
+  top:50px;
+  background-color: rgb(38, 38, 38,0.7);
+
+" action="{{ url_for('predict')}}" method="post">
+
+			<h2 style="color: white; font-weight:bold; font-family: Times New Roman; position:relative; top:0px;">Sales Prediction</h2><br>
+      <center>
+      <table>
+        
+        <tr>
+          <td>
+            <label for="product" style="color:azure">Product</label> 
+          </td>
+          <td>
+            <input style="width:240px;height: auto;" id="product" name="product">           
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="html" style="color:azure">Dozens</label>
+          </td>
+          <td>
+            <input type="radio" id="dz" name="type" value="dz">
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="css" style="color:azure">MC</label>
+          </td>
+          <td>
+            <input type="radio" id="mc" name="type" value="mc">
+          </td>
+        </tr>
+
+
+        <tr>
+          <td colspan="2">
+            <center>
+              <button type="submit" class="btn btn-primary">Predict</button>
+            </center>
+          </td>
+        </tr>
+     
+      </table> 
+    </center>
+      </form>
+      </center>
+      <br><br><br>
+      <br />
+      <br />
+  </body>
+</html>
